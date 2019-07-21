@@ -58,7 +58,6 @@ class TopicsController extends Controller
 	{
 		$this->authorize('update', $topic);
 		$topic->update($request->all());
-
 		return redirect()->to($topic->link())->with('message', '修改成功！');
 	}
 
