@@ -11,7 +11,7 @@ return [
     //访问权限判断
     'permission' => function () {
         // 只允许站长管理资源推荐链接
-        return Auth::user()->has('Founder');
+        return Auth::user()->hasRole('Founder');
     },
 
     'columns' => [
