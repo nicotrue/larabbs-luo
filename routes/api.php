@@ -46,6 +46,8 @@ $api->version('v1', [
                 ->name('api.images.store');
             // 编辑登录用户信息
             $api->patch('user','UsersController@update')
+                ->name('api.user.patch');
+            $api->put('user','UsersController@update')
                 ->name('api.user.update');
             // 发布话题
             $api->post('topics','TopicsController@store')
@@ -103,6 +105,9 @@ $api->version('v1', [
         // 删除token
         $api->delete('authorizations/current', 'AuthorizationsController@destroy')
             ->name('api.authorizations.destroy');
+        // 用户详情
+        $api->get('users/{user}','UsersController@show')
+            ->name('api.users.show');
     });
 });
 
